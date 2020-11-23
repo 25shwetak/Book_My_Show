@@ -1,0 +1,45 @@
+<div class="container">
+  <head>
+    <style>
+      table, th, td {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Available Shows</h1>
+      <table class="table">
+        <tr>
+          <th class="text-center">Timing</th>
+          <th class="text-center">Date</th>
+          <th class="text-center">Movie</th>
+          <th class="text-center">Type</th>
+          <th class="text-center">Booking</th>
+        </tr>
+        <% @shows.each do |show| %>
+          <tr>
+            <td class="text-center">
+              <%= show.time %>
+            </td>
+            <td class="text-center">
+              <%= show.date %>
+            </td>
+            <td class="text-center">
+              <%= @movies[@count = @count + 1][0].first%>
+            </td>
+            <td class="text-center">
+              <%= @movies[@counts = @counts + 1][0].last%>
+            </td>
+            <td class="text-center">
+              <%= form_with(url: "/book", method: "POST") do %>
+                <%= submit_tag("Book") %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <p><a href="/">Go Back To Home Page</a></p>
+    </center>
+  </body>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <head>
+    <style>
+      table, th, td {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>MOVIES</h1>
+      <table class="table">
+        <tr>
+          <th class="text-center">Movie Name</th>
+          <th class="text-center">Movie Type</th>
+          <th class="text-center">Duration</th>
+          <th class="text-center">Click To Edit</th>
+          <th class="text-center">Click To Delete</th>
+        </tr>
+        <% @movies.each do |movie| %>
+          <tr>
+            <td class="text-center">
+              <%= movie.movie_name %>
+            </td>
+            <td class="text-center">
+              <%= movie.movie_type %>
+            </td>
+            <td class="text-center">
+              <%= movie.duration %>
+            </td>
+            <td class="text-center">
+              <%= form_with(url: "/movies/update", method: "PUT") do %>
+                <%= submit_tag("EDIT") %>
+              <% end %>
+            </td>
+            <td class="text-center">
+              <%= form_with(url: "/movies/delete", method: "DELETE") do %>
+                <%= submit_tag("DELETE") %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+      </table>
+      <p><a class="button" href="/movies/show">Add More Movies</a></p>
+    </center>
+  </body>
+</div>

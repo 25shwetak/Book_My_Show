@@ -1,0 +1,64 @@
+<div class="container">
+  <head>
+    <style>
+      table, td {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Select Seats</h1>
+      <h3>!!!!!!!!!!! SCREEN !!!!!!!!!!!</h3>
+      <table class="table">
+        <% while @rows < 10%>
+          <tr>
+            <td class="text-center">
+              ROW <%= @rows = @rows + 1 %>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+            <td class="text-center">
+              <button type="button"><%= @number = @number + 1 %></button>
+            </td>
+          </tr>
+          <% end %>
+      </table>
+      <br>
+      <p>COST OF SEATS</p>
+      <p>Row 1     = ₹150</p>
+      <p>Row 2 - 9 = ₹200</p>
+      <p>Row 10    = ₹300</p>
+      <p><a class="button" href="/bookings">Confirm Booking</a></p>
+      <br/>
+      <br/>
+      <p><a class="button" href="/shows">Select Another Show</a></p>
+      <p><a class="button" href="/">Go Back To Home Page</a></p>
+    </center>
+  </body>
+</div>

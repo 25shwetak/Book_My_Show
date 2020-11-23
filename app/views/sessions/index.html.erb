@@ -1,0 +1,33 @@
+<div class="container">
+  <body>
+    <center>
+        <h1>
+            Click Here To Book A Movie
+            <a class="button" href="/shows">BOOK MY SHOW</a>
+        </h1>
+        <br/>
+        <br/>
+        <h3>Only For Admins</h3>
+        <h4>Login</h4>
+        <%= form_with(url: "/login", method: "POST") do %>
+          <table class="table">
+            <tr>
+              <td><%= label_tag(:email, "Email") %></td>
+              <td><%= text_field_tag(:email) %></td>
+            </tr>
+            <br/>
+            <br/>
+            <tr>
+              <td><%= label_tag(:password, "Password") %></td>
+              <td><%= password_field_tag(:password) %></td>
+            </tr>
+          </table>
+            <br/>
+            <br/>
+            <%= submit_tag("Submit") %>
+        <% end %>
+        <h4>Don't Have An Account? Click On SignUp for registration</h4>
+        <a class="button" href="/signup_page">SignUp</a>
+    </center>
+  </body>
+</div>

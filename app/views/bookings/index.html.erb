@@ -1,0 +1,43 @@
+<div class="container">
+  <head>
+    <style>
+      table, td {
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Congratulations!! Your Booking Is Confirmed</h1>
+      <table class="table">
+        <tr>
+          <td>Booking ID</td>
+          <td><%= @bookings.first.id %></td>
+        </tr>
+        <tr>
+          <td>Show Timings</td>
+          <td><%= @shows[0].first.time %></td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td><%= @shows[0].first.date %></td>
+        </tr>
+        <tr>
+          <td>Movie</td>
+          <td><%= @shows[0].first.movie_id %></td>
+        </tr>
+        <tr>
+          <td>Seat Selected</td>
+          <td>A1</td>
+        </tr>
+        <tr>
+          <td>Total Price</td>
+          <td>₹150</td>
+        </tr>
+      </table>
+      </br>
+      <p><a class="button" href="/shows">Book More</a></p>
+      <p><a class="button" href="/">Go Back To Home</a></p>
+    </center>
+  </body>
+</div>
