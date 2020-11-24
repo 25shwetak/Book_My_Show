@@ -11,28 +11,28 @@
       <h1>Congratulations!! Your Booking Is Confirmed</h1>
       <table class="table">
         <tr>
-          <td>Booking ID</td>
-          <td><%= @bookings.first.id %></td>
-        </tr>
-        <tr>
           <td>Show Timings</td>
-          <td><%= @shows[0].first.time %></td>
+          <td><%= @show.time %></td>
         </tr>
         <tr>
           <td>Date</td>
-          <td><%= @shows[0].first.date %></td>
+          <td><%= @show.date %></td>
         </tr>
         <tr>
           <td>Movie</td>
-          <td><%= @shows[0].first.movie_id %></td>
+          <td><%= @movie.movie_name %></td>
         </tr>
         <tr>
           <td>Seat Selected</td>
-          <td>A1</td>
+          <td>
+            <%= @seats.each do |seat| %>
+              <%= seat.seat_number %>,
+            <% end %>
+          </td>
         </tr>
         <tr>
           <td>Total Price</td>
-          <td>₹150</td>
+          <td>₹<%= @sum %></td>
         </tr>
       </table>
       </br>

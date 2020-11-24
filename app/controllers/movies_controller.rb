@@ -15,15 +15,21 @@ class MoviesController < ApplicationController
 
     def destroy
         p params
-        movie_id = params["id"]
+        movie_id = params["movie_id"]
         Movie.delete(movie_id)
         redirect_to '/movies'
     end
 
-    def update
-        p "Updated !!!"
+    def edit
+      @movie_id = params["id"]
     end
 
-    def show
+    def update
+      movie_id = params.keys[7].to_i
+      Movie.update(movie_id, movie_name: params["movie_name"], movie_type: params["movie_type"], duration: params["duration"])
+      redirect_to '/movies'
+    end
+
+    def new
     end
 end

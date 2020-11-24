@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   post 'signup', to: 'admins#create'
   post 'login', to: 'sessions#create'
   get '/', to: 'sessions#index'
-  post 'book', to: 'shows#book'
 end

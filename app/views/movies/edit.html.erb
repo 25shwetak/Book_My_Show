@@ -1,0 +1,31 @@
+<div class="container">
+  <body>
+    <center>
+        <h1>Enter Details You Want To Edit </h1>
+        <%= form_with(url: "/movies/update?#{@movie_id}", method: "PUT") do %>
+          <table class="table">
+            <tr>
+              <td><%= label_tag(:movie_name, "Movie Name*") %></td>
+              <td><%= text_field_tag(:movie_name) %></td>
+            </tr>
+            <br/>
+            <br/>
+            <tr>
+              <td><%= label_tag(:movie_type, "Movie Type*") %></td>
+              <td><%= text_field_tag(:movie_type) %></td>
+            </tr>
+            <br/>
+            <br/>
+            <tr>
+              <td><%= label_tag(:duration, "Duration*") %></td>
+              <td><%= text_field_tag(:duration) %></td>
+            </tr>
+          </table>
+            <br/>
+            <br/>
+            <%= submit_tag("Update") %>
+        <% end %>
+    </center>
+  </body>
+</div>
+

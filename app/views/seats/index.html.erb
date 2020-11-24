@@ -5,9 +5,56 @@
         border: 3px solid black;
       }
     </style>
+    <script>
+      var seats_array = [];
+      var count = 1;
+      function setColor(btn) {
+          var property = document.getElementById(btn);
+          if (count == 0) {
+              property.style.backgroundColor = "#FFFFFF"
+              count = 1;
+              seats_array.push(btn)        
+          }
+          else {
+              property.style.backgroundColor = "#7FFF00"
+              count = 0;
+              seats_array.delete(btn)
+          }
+      }
+      function redirect(){
+        window.location.replace("http://localhost:3000/bookings")
+      }
+    </script>
   </head>
   <body>
     <center>
+      <h1>Show Selected</h1>
+      <table class="table">
+        <tr>
+          <td>
+            Movie Name
+          </td>
+          <td>
+            <%= @movie.movie_name %>
+          </td>
+        <tr>
+        <tr>
+          <td>
+            Show Timings
+          </td>
+          <td>
+            <%= @show.time %>
+          </td>
+        <tr>
+        <tr>
+          <td>
+            Show Date
+          </td>
+          <td>
+            <%= @show.date %>
+          </td>
+        <tr>
+      </table>
       <h1>Select Seats</h1>
       <h3>!!!!!!!!!!! SCREEN !!!!!!!!!!!</h3>
       <table class="table">
@@ -17,34 +64,34 @@
               ROW <%= @rows = @rows + 1 %>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
             <td class="text-center">
-              <button type="button"><%= @number = @number + 1 %></button>
+              <button type="button" onClick=setColor(id) id=<%= @number = @number + 1%>><%= @number %></button>
             </td>
           </tr>
           <% end %>
@@ -54,7 +101,7 @@
       <p>Row 1     = ₹150</p>
       <p>Row 2 - 9 = ₹200</p>
       <p>Row 10    = ₹300</p>
-      <p><a class="button" href="/bookings">Confirm Booking</a></p>
+      <p><%= button_to 'Confirm Booking', {:controller => "bookings", :action => "create", :show_id => @show_id, :seats_array => [1,2,3,4] } , :method=>:post  %></p>
       <br/>
       <br/>
       <p><a class="button" href="/shows">Select Another Show</a></p>

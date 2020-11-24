@@ -15,7 +15,6 @@
           <th class="text-center">Movie Type</th>
           <th class="text-center">Duration</th>
           <th class="text-center">Click To Edit</th>
-          <th class="text-center">Click To Delete</th>
         </tr>
         <% @movies.each do |movie| %>
           <tr>
@@ -29,20 +28,14 @@
               <%= movie.duration %>
             </td>
             <td class="text-center">
-              <%= form_with(url: "/movies/update", method: "PUT") do %>
-                <%= submit_tag("EDIT") %>
-              <% end %>
-            </td>
-            <td class="text-center">
-              <%= form_with(url: "/movies/delete", method: "DELETE") do %>
-                <%= submit_tag("DELETE") %>
-              <% end %>
+              <%= link_to "Edit" , edit_movie_path(movie.id)%>
             </td>
           </tr>
         <% end %>
         <tr>
       </table>
-      <p><a class="button" href="/movies/show">Add More Movies</a></p>
+      <p><a class="button" href="/movies/new">Add More Movies</a></p>
+      <p><a class="button" href="/">LOGOUT</a></p>
     </center>
   </body>
 </div>

@@ -32,9 +32,7 @@
               <%= @movies[@counts = @counts + 1][0].last%>
             </td>
             <td class="text-center">
-              <%= form_with(url: "/book", method: "POST") do %>
-                <%= submit_tag("Book") %>
-              <% end %>
+              <%= link_to "Book", seats_path(show_id: show.id)%>
             </td>
           </tr>
         <% end %>
